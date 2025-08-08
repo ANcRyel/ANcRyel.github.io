@@ -1,1 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 
+<head>
+	<meta charset="UTF-8">
+	<meta label="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ANcRyel</title>
+	<!-- 个人认为font awesome的v6比v7还好看，所以这里没有用最新版 -->
+	<link rel="stylesheet" href="font-awesome/css/all.min.css">
+	<style>
+		@font-face {
+			font-family: 'San Francisco';
+			src: url('SF-pro.ttf') format('truetype');
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			min-height: 100vh;
+			background: url("background.webp") 0 0 / cover;
+			font-family: 'San Francisco', Arial, sans-serif;
+		}
+
+		#container {
+			display: flex;
+			overflow: hidden;
+
+			&.expanded #rightCard {
+				width: 700px;
+				margin-left: 20px;
+				opacity: 1;
+			}
+
+			&.expanded #leftCard {
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+			}
+
+			&.expanded #leftCard .hints {
+				.expand-hint {
+					opacity: 0;
+				}
+
+				.scroll-hint {
+					opacity: 0.7;
+				}
+			}
+		}
+
+		#leftCard {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			width: 220px;
+			height: 500px;
+			padding: 30px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			background: rgba(16, 16, 47, 0.4);
+			transition: .8s;
+			cursor: pointer;
+
+			.author-info {
+				margin: 20px;
+				text-align: center;
+
+				.avatar {
+					width: 120px;
+					height: 120px;
+					margin-bottom: 20px;
+					border: 5px solid rgba(255, 255, 255, .2);
+					border-radius: 50%;
+					object-fit: cover;
+					transition: .2s ease;
+
+					&:hover {
+						box-shadow: 0 5px 15px rgba(255, 255, 255, .2);
+						transform: scale(1.05);
+					}
+				}
+
+				.name {
+					margin-bottom: 15px;
+					font-size: 2.2rem;
+					font-weight: 500;
+					line-height: 1;
+					color: rgb(255, 255, 255);
+					letter-spacing: 2px;
+				}
+
+				.bio {
+					margin-bottom: 20px;
+					font-weight: 400;
+					line-height: 1.6;
+					color: rgb(204, 204, 204);
+				}
+			}
+
+			.expand-hint,
+			.scroll-hint {
+				width: 100%;
+				gap: 5px;
+				font-size: 0.9rem;
+				color: rgb(204, 204, 255);
+				transition: opacity 0.6s ease;
+				opacity: 0.7;
+			}
+
+			.expand-hint {
+				transform: translateY(100%);
+			}
+
+			.scroll-hint {
+				opacity: 0;
+			}
+
+		}
+
+		#rightCard {
+			display: flex;
+			overflow: hidden;
+			width: 0;
+			height: 500px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			background: rgba(0, 0, 0, .1);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			transition: .8s;
+			cursor: default;
+			opacity: 0;
+		}
+
+		.page {
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			width: 700px;
+			height: 100%;
+			padding: 20px;
+			opacity: 0;
+			transition: .6s;
+			pointer-events: none;
+
+			&.active {
+				z-index: 1;
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+	</style>
+	<style>
+		.page {
+			p,
+			span {
+				font-size: 1.2rem;
+				line-height: 1.2;
+				color: rgb(224, 224, 255);
+			}
+
+			.card {
+				padding: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				background-color: rgba(0, 0, 0, .3);
+			}
+
+			.secret {
+				display: inline-block;
+				font-size: 1rem;
+				font-style: italic;
+				background: rgb(224, 224, 255);
+				transform: translateY(-0.1rem);
+				transition: .3s;
+
+				&::before {
+					content: " 〔 ";
+				}
+
+				&::after {
+					content: " 〕 ";
+				}
+
+				&:hover {
+					background: transparent;
+				}
+			}
+
+			.title {
+				margin-bottom: 10px;
+				font-size: 2.5rem;
+				text-align: center;
+				text-shadow: 0 0 5px rgba(0, 0, 0, .2);
+				color: rgb(255, 255, 255);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<div id="leftCard">
+			<div class="author-info">
+				<img class="avatar" src="avatar.webp" />
+				<h1 class="name">ANcRyel</h1>
+				<p class="bio">点击此处添加文本</p>
+			</div>
+
+			<div class="hints">
+				<p class="expand-hint">点击查看详情 <i class="fas fa-arrow-right"></i></p>
+				<p class="scroll-hint">滚动切换页面 <i class="fas fa-mouse"></i></p>
+			</div>
+
+		</div>
+
+		<div id="rightCard">
+			<div class="page active" id="page1">
+				<style>
+					#page1 {
+						.greeting-card {
+							margin-bottom: 22px;
+						}
+
+						.greeting-text {
+							text-align: center;
+						}
+
+						.social-grid {
+							display: grid;
+							grid-template-columns: repeat(4, 1fr);
+							padding: 0 15px;
+							border-left: 8px solid rgba(0, 0, 0, .3);
+							border-right: 8px solid rgba(0, 0, 0, .3);
+							gap: 14px;
+						}
+
+						.social-card {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							padding: 6px;
+							text-decoration: none;
+							transition: all 0.3s;
+							cursor: pointer;
+
+							&:hover {
+								background: rgba(16, 16, 47, 0.3);
+								box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+							}
+						}
+
+						.social-icon {
+							margin: 3px 0 5px;
+							font-size: 2.1rem;
+							color: rgb(224, 224, 255);
+						}
+
+						.social-label {
+							font-size: 0.9rem;
+							font-weight: 500;
+						}
+					}
+				</style>
+				<h2 class="title">欢迎</h2>
+				<div class="card greeting-card">
+					<p class="greeting-text">欢迎来到ANcRyel的静态页面，不过这里暂时什么都没有(〣◠_◠)<br />「万物方凝成，君亦先探虚」</p>
+				</div>
+
+				<h2 class="title"><i class="fas fa-link"></i> 社交网络</h2>
+				<div class="social-grid">
+					<a href="mailto:1131895034@qq.com" target="_blank" class="card social-card">
+						<i class="fas fa-envelope social-icon"></i>
+						<span class="social-label">电子邮件(临时)</span>
+					</a>
+					<a href="https://github.com/ANcRyel" target="_blank" class="card social-card">
+						<i class="fab fa-github social-icon"></i>
+						<span class="social-label">GitHub</span>
+					</a>
+					<a href="https://space.bilibili.com/3493105091217872" target="_blank" class="card social-card">
+						<i class="fab fa-bilibili social-icon"></i>
+						<span class="social-label">哔哩哔哩</span>
+					</a>
+					<a href="https://x.com/claory233" target="_blank" class="card social-card">
+						<i class="fab fa-x-twitter social-icon"></i>
+						<span class="social-label">X/twitter</span>
+					</a>
+					<!-- font-awesome的sigma图标需要pro才能使用╮(╯▽╰)╭ -->
+					<a class="card social-card">
+						<span class="social-icon" style="transform: scaleX(1.4)">Σ</span>
+						<span class="social-label">1, 2, 3, GO!</span>
+					</a>
+					<a class="card social-card">
+						<span class="social-icon" style="transform: scaleX(1.4)">Σ</span>
+						<span class="social-label"><i class="fas fa-minus"></i><i class="fas fa-minus"></i><i class="fas fa-long-arrow-right"></i></span>
+					</a>
+				</div>
+			</div>
+
+			<div class="page" id="page2">
+				<style>
+					#page2 {
+						.info-card,
+						.desc-card {
+							margin-bottom: 14px;
+						}
+
+						.info-text {
+							text-align: center;
+						}
+
+						.reason-card {
+							margin-bottom: 22px;
+						}
+
+						.progress-grid {
+							display: grid;
+							grid-template-columns: repeat(2, 1fr);
+							padding: 0 15px;
+							border-left: 8px solid rgba(0, 0, 0, .3);
+							border-right: 8px solid rgba(0, 0, 0, .3);
+							gap: 14px;
+						}
+
+						.progress-card {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							padding: 12px;
+							text-decoration: none;
+						}
+
+						.progress-header {
+							display: flex;
+							justify-content: space-between;
+							width: 100%;
+							margin-bottom: 12px;
+						}
+
+						.progress-bar {
+							width: 100%;
+							height: 23px;
+							border: 3px solid rgb(224, 224, 255);
+						}
+
+						.progress-fill {
+							height: 13px;
+							margin: 2px;
+							background: rgb(224, 224, 255);
+						}
+
+						.progress-text {
+							margin-left: 2px;
+							font-size: 0.7rem;
+							line-height: 13px;
+							mix-blend-mode: exclusion;
+						}
+					}
+				</style>
+				<h2 class="title"><i class="fas fa-tools"></i> 临时页面</h2>
+				<div class="card info-card">
+					<p class="info-text">当前为临时页面，非正式项目页面，和正式项目效果无关。</p>
+				</div>
+				<div class="card reason-card">
+					<p class="text">正式项目会继续开发<span class="secret">重写了三次了(∏﹏∏)</span>，但是由于学业导致开发时间有限，完成时间不确定，所以先搓一个临时页面来填补空白<span class="secret">实则3天垃的史</span>。</p>
+				</div>
+
+				<h2 class="title"><i class="fas fa-tasks"></i> 项目进度</h2>
+				<div class="card desc-card">
+					<p class="desc-text">正式项目开发进度，偶尔更新<span class="secret">每次更新不一定都会增加...还可能回退</span>。</p>
+				</div>
+				<!-- 有N个事项，每个事项 有编写未正式编写:1% 正式编写中:(n/2)% 编写完成未确认(n-1)% 编写完成n% -->
+				<div class="progress-grid">
+					<div class="card progress-card">
+						<div class="progress-header">
+							<span class="progress-title">功能</span>
+							<span class="progress-metrics">事项：4</span>
+						</div>
+						<div class="progress-bar">
+							<div class="progress-fill" style="width: 36.5%;">
+								<p class="progress-text">36.5%</p>
+							</div>
+						</div>
+					</div>
+					<div class="card progress-card">
+						<div class="progress-header">
+							<span class="progress-title">界面</span>
+							<span class="progress-metrics">事项：不知道(ﾟ⊿ﾟ)ﾂ</span>
+						</div>
+						<div class="progress-bar">
+							<div class="progress-fill" style="width: 0%;">
+								<p class="progress-text">0%</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page" id="page3">
+				<style>
+					#page3 {
+						a {
+							color: inherit;
+						}
+
+						.source-card {
+							margin-bottom: 22px;
+						}
+					}
+				</style>
+				<h2 class="title"><i class="fas fa-copyright"></i> 素材出处</h2>
+				<div class="card source-card">
+					<p>背景: <a href="https://www.pixiv.net/artworks/82467485" target="_blank">PID 82467485</a> (源图已被删除)</p>
+					<p>头像: <a href="https://www.pixiv.net/artworks/108511190" target="_blank">PID 108511190</a></p>
+					<p>图标: <a href="https://fontawesome.com/v6/download" target="_blank">font-awesome v6.7.2 free</a></p>
+					<p>字体: <a href="https://developer.apple.com/fonts/" target="_blank">San Francisco Pro</a></p>
+				</div>
+
+				<h2 class="title"><i class="fas fa-copy"></i> 使用许可</h2>
+				<div class="card license-card">
+					<p>如果喜欢这个<span class="secret">有点丑的(作者毫无艺术细胞)</span>页面的话，你可以自行拷贝修改并使用！源码与资源在<a href="https://github.com/ANcRyel/ANcRyel.github.io/tree/gh-pages" target="_blank">我的GitHub静态页面仓库的gh-page分支</a>中。</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+
+	<script>
+		const container = document.getElementById('container'),
+			leftCard = document.getElementById('leftCard'),
+			rightCard = document.getElementById('rightCard'),
+			pages = document.querySelectorAll('.page')
+		let isExpanded = false,
+			currentPageIndex = 0,
+			inScrollingInterval = false
+
+		// 设置初始页面平移
+		document.addEventListener('DOMContentLoaded', () => {
+			pages.forEach((page, index) => {
+				if (index !== 0) page.style.transform = 'translateY(100%)'
+			})
+		})
+
+		// 控制展开关闭
+		leftCard.addEventListener('click', () => {
+			isExpanded = !isExpanded, container.classList.toggle('expanded')
+		})
+
+		// 控制页面切换
+		document.addEventListener('wheel', e => {
+			if (!isExpanded || inScrollingInterval) return
+			inScrollingInterval = true
+			const newIndex = Math.max(0, Math.min(
+				pages.length - 1,
+				currentPageIndex + (e.deltaY > 0 ? 1 : -1)
+			))
+			if (newIndex === currentPageIndex) return (inScrollingInterval = false)
+
+			const currentPage = pages[currentPageIndex],
+				newPage = pages[newIndex]
+			currentPage.style.transform = e.deltaY > 0
+				? 'translateY(-100%)'
+				: 'translateY(100%)'
+			newPage.style.transform = e.deltaY > 0
+				? 'translateY(100%)'
+				: 'translateY(-100%)'
+			currentPage.classList.remove('active')
+			newPage.classList.add('active')
+
+			newPage.style.transform = ''
+			currentPageIndex = newIndex
+
+			setTimeout(() => {
+				inScrollingInterval = false
+			}, 250)
+		})
+
+
+	</script>
+</body>
+
+</html>
