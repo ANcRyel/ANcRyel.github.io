@@ -275,7 +275,7 @@
 
 				<h2 class="title">欢迎</h2>
 				<div class="card greeting-card">
-					<p class="greeting-text">欢迎来到ANcRyel的静态页面，不过这里暂时没有什么(〣◠_◠)<br />注意：移动端无法正常使用</p>
+					<p class="greeting-text">欢迎来到ANcRyel的静态页面，不过这里暂时没有什么(〣◠_◠)<br />注意：移动端可能无法正常显示</p>
 				</div>
 
 				<h2 class="title"><i class="fas fa-link"></i> 社交网络</h2>
@@ -446,8 +446,37 @@
 			rightCard = document.getElementById('rightCard'),
 			pages = document.querySelectorAll('.page')
 		let isExpanded = false,
+			inScrollingInterval = false,
 			currentPageIndex = 0,
-			inScrollingInterval = false
+			touchStartY = 0
+
+		function changePage(direction) {
+			if (inScrollingInterval) return
+			inScrollingInterval = true
+			const newIndex = Math.max(0, Math.min(
+				pages.length - 1,
+				currentPageIndex + direction
+			))
+			if (newIndex === currentPageIndex) return (inScrollingInterval = false)
+
+			const currentPage = pages[currentPageIndex],
+				newPage = pages[newIndex]
+			currentPage.style.transform = direction > 0
+				? 'translateY(-100%)'
+				: 'translateY(100%)'
+			newPage.style.transform = direction > 0
+				? 'translateY(100%)'
+				: 'translateY(-100%)'
+			currentPage.classList.remove('active')
+			newPage.classList.add('active')
+
+			newPage.style.transform = ''
+			currentPageIndex = newIndex
+
+			setTimeout(() => {
+				inScrollingInterval = false
+			}, 250)
+		}
 
 		// 设置初始页面平移
 		document.addEventListener('DOMContentLoaded', () => {
@@ -463,31 +492,19 @@
 
 		// 控制页面切换
 		document.addEventListener('wheel', e => {
-			if (!isExpanded || inScrollingInterval) return
-			inScrollingInterval = true
-			const newIndex = Math.max(0, Math.min(
-				pages.length - 1,
-				currentPageIndex + (e.deltaY > 0 ? 1 : -1)
-			))
-			if (newIndex === currentPageIndex) return (inScrollingInterval = false)
+			if (!isExpanded) return;
+			changePage(e.deltaY > 0 ? 1 : -1);
+		})
 
-			const currentPage = pages[currentPageIndex],
-				newPage = pages[newIndex]
-			currentPage.style.transform = e.deltaY > 0
-				? 'translateY(-100%)'
-				: 'translateY(100%)'
-			newPage.style.transform = e.deltaY > 0
-				? 'translateY(100%)'
-				: 'translateY(-100%)'
-			currentPage.classList.remove('active')
-			newPage.classList.add('active')
-
-			newPage.style.transform = ''
-			currentPageIndex = newIndex
-
-			setTimeout(() => {
-				inScrollingInterval = false
-			}, 250)
+		rightCard.addEventListener('touchstart', e => {
+			if (!isExpanded) return;
+			touchStartY = e.changedTouches[0].screenY
+		})
+		rightCard.addEventListener('touchend', e => {
+			if (!isExpanded) return;
+			const diff = touchStartY - e.changedTouches[0].screenY;
+			// 如果滑动距离足够大，则切换页面
+			if (Math.abs(diff) > 50) changePage(diff > 0 ? 1 : -1);
 		})
 	</script>
 </body>
