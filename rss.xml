@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>ANcRyel の 博客</title><description>Modified Fuwari</description><link>https://ancryel.github.io/</link><language>zh_CN</language><item><title>博客的第一篇文章</title><link>https://ancryel.github.io/posts/firstpost/</link><guid isPermaLink="true">https://ancryel.github.io/posts/firstpost/</guid><description>这是我的新 Astro 博客的第一篇文章。</description><pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;封面图片来源: &lt;a href=&quot;https://www.pixiv.net/artworks/125160058&quot;&gt;来源&lt;/a&gt;&lt;br /&gt;
+Cover image source: &lt;a href=&quot;https://www.pixiv.net/artworks/125160058&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;:::note
+博客还未完全完成，目前不是最终效果。但是叕开学了，先提交上线吧hhhh&lt;br /&gt;
+This blog is still a work in progress, so it&apos;s not the final version yet.
+:::&lt;/p&gt;
+&lt;h2&gt;这个博客是······ | This blog is...&lt;/h2&gt;
+&lt;p&gt;这个博客是基于 &lt;a href=&quot;https://github.com/saicaca/fuwari&quot;&gt;Fuwari&lt;/a&gt; 静态博客框架修改而成的:spoiler[（我绝对不会告诉你这其实是拼好站，不过后续会去整理代码的）]，使用 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建。&lt;br /&gt;
+This blog is a modified version of the &lt;a href=&quot;https://github.com/saicaca/fuwari&quot;&gt;Fuwari&lt;/a&gt; static blog framework, built with &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;o(￣ー￣；)ゞ&lt;/h2&gt;
+&lt;p&gt;不知道写些什么 就先这样吧 ╮(╯▽╰)╭&lt;br /&gt;
+idk what to write here... so, that&apos;s it ¯\_(ツ)_/¯&lt;/p&gt;
+</content:encoded></item></channel></rss>
