@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /astro/
+Disallow: /_astro/
 
 Sitemap: https://ancryel.github.io/sitemap-index.xml
