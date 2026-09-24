@@ -4,7 +4,7 @@
 &lt;li&gt;使用本方法所造成的任何异常，请自行承担风险；建议提前做好相关备份&lt;/li&gt;
 &lt;li&gt;本文仅供技术交流，如涉及相关权益争议，请联系删除[^1]&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[^1]: 请通过 B 站私信联系我，我会与 B 站文章一并处理。&lt;/p&gt;
+&lt;p&gt;[^1]: 请通过 B 站私信联系我，我会连同 B 站上的同篇内容一并处理。&lt;/p&gt;
 &lt;p&gt;:::note
 该方法无法解锁「秋仪金」主题
 :::&lt;/p&gt;
@@ -57,11 +57,11 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;步骤四：重启 PCL2 客户端&lt;/h3&gt;
-&lt;p&gt;大功告成！重启 PCL2 后，隐藏主题应已出现在主题列表中&lt;/p&gt;
+&lt;p&gt;大功告成！重启 PCL2 后，隐藏主题应当已经出现在主题列表中&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./cover.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;原理与发现&lt;/h2&gt;
-&lt;p&gt;PCL2 将已解锁主题以加密字符串的形式存入注册表 &lt;code&gt;HKEY_CURRENT_USER\Software\PCL\UiLauncherThemeHide2&lt;/code&gt; 中。&lt;/p&gt;
+&lt;p&gt;PCL2 将已解锁主题以密文的形式存入注册表 &lt;code&gt;HKEY_CURRENT_USER\Software\PCL\UiLauncherThemeHide2&lt;/code&gt; 中。&lt;/p&gt;
 &lt;p&gt;加密采用 DES，密钥为 &lt;strong&gt;&lt;code&gt;PCL&lt;/code&gt; + 设备识别码&lt;/strong&gt;，调用形式为：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ModBase.SecureRemove(cipherText, &quot;PCL&quot; + ModBase.GetUniqueAddress());
 &lt;/code&gt;&lt;/pre&gt;
@@ -71,10 +71,12 @@
 &lt;pre&gt;&lt;code&gt;&apos;由于包含加解密等安全信息，本文件中的部分代码已被删除
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;所以无法直接从官方源码中获取 &lt;code&gt;SecureAdd&lt;/code&gt; / &lt;code&gt;SecureRemove&lt;/code&gt; 等加解密函数。&lt;/p&gt;
-&lt;p&gt;不过，之前为解锁「极客蓝」主题曾下载过 PCL2 dev0.4.4，回想起该版本内置了“加解密测试”功能，于是可利用它直接生成所需的解锁密文。&lt;/p&gt;
+&lt;p&gt;所幸的是，我想起之前为解锁「极客蓝」主题曾下载过 PCL2 dev0.4.4，该版本内置了“加解密测试”功能，正好可用来直接生成解锁密文。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;参考资料：
-&lt;a href=&quot;https://www.luogu.com/article/ughew4si&quot;&gt;PCL2的反编译以及主题破解(除秋仪金)(修改版)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.luogu.com/article/ughew4si&quot;&gt;PCL2的反编译以及主题破解(除秋仪金)(修改版)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded></item><item><title>博客的第一篇文章</title><link>https://ancryel.github.io/posts/firstpost/</link><guid isPermaLink="true">https://ancryel.github.io/posts/firstpost/</guid><description>我的新 Astro 博客的第一篇文章。</description><pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;封面图片来源: &lt;a href=&quot;https://www.pixiv.net/artworks/125160058&quot;&gt;来源&lt;/a&gt;
 Cover image source: &lt;a href=&quot;https://www.pixiv.net/artworks/125160058&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
