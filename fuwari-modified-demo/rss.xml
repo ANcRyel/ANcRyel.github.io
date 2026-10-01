@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Fuwari Modified</title><description>Demo Site</description><link>https://ancryel.github.io/</link><language>zh_CN</language><item><title>Markdown 扩展功能</title><link>https://ancryel.github.io/posts/markdown-extended/</link><guid isPermaLink="true">https://ancryel.github.io/posts/markdown-extended/</guid><description>了解 Fuwari Modified 中 Markdown 扩展功能</description><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Fuwari Modified</title><description>Demo Site</description><link>https://ancryel.github.io/</link><language>zh_CN</language><item><title>Markdown 扩展功能</title><link>https://ancryel.github.io/fuwari-modified-demo/posts/markdown-extended/</link><guid isPermaLink="true">https://ancryel.github.io/fuwari-modified-demo/posts/markdown-extended/</guid><description>了解 Fuwari Modified 中 Markdown 扩展功能</description><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
 &lt;p&gt;使用仓库卡片展示 GitHub 项目。页面载入时，组件会尝试从 GitHub API 获取仓库信息。&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;github/github-mcp-server&quot;}&lt;/p&gt;
 &lt;p&gt;语法为 &lt;code&gt;::github{repo=&quot;&amp;lt;所有者&amp;gt;/&amp;lt;仓库名&amp;gt;&quot;}&lt;/code&gt;：&lt;/p&gt;
@@ -56,7 +56,7 @@
 &lt;pre&gt;&lt;code&gt;隐藏内容在这里：:spoiler[这段文字默认会被隐藏]。
 
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>Expressive Code 示例</title><link>https://ancryel.github.io/posts/expressive-code/</link><guid isPermaLink="true">https://ancryel.github.io/posts/expressive-code/</guid><description>了解 Expressive Code 如何增强 Markdown 代码块。</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本文展示本站通过 &lt;a href=&quot;https://expressive-code.com/&quot;&gt;Expressive Code&lt;/a&gt; 呈现代码块的效果。更多配置细节可参阅其官方文档。&lt;/p&gt;
+</content:encoded></item><item><title>Expressive Code 示例</title><link>https://ancryel.github.io/fuwari-modified-demo/posts/expressive-code/</link><guid isPermaLink="true">https://ancryel.github.io/fuwari-modified-demo/posts/expressive-code/</guid><description>了解 Expressive Code 如何增强 Markdown 代码块。</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本文展示本站通过 &lt;a href=&quot;https://expressive-code.com/&quot;&gt;Expressive Code&lt;/a&gt; 呈现代码块的效果。更多配置细节可参阅其官方文档。&lt;/p&gt;
 &lt;h2&gt;代码块样式&lt;/h2&gt;
 &lt;h3&gt;语法高亮&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://expressive-code.com/key-features/syntax-highlighting/&quot;&gt;语法高亮文档&lt;/a&gt;&lt;/p&gt;
@@ -265,7 +265,7 @@ console.log(&apos;请问你知道我位于哪一行吗？&apos;)
 &lt;pre&gt;&lt;code&gt;console.log(&apos;你好，我位于第 5 行！&apos;)
 console.log(&apos;我位于第 6 行&apos;)
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>Fuwari Modified 简易指南</title><link>https://ancryel.github.io/posts/guide/</link><guid isPermaLink="true">https://ancryel.github.io/posts/guide/</guid><description>如何使用此博客模板。</description><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+</content:encoded></item><item><title>Fuwari Modified 简易指南</title><link>https://ancryel.github.io/fuwari-modified-demo/posts/guide/</link><guid isPermaLink="true">https://ancryel.github.io/fuwari-modified-demo/posts/guide/</guid><description>如何使用此博客模板。</description><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;封面图来源：&lt;a href=&quot;https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/208fc754-890d-4adb-9753-2c963332675d/width=2048/01651-1456859105-(colour_1.5),girl,_Blue,yellow,green,cyan,purple,red,pink,_best,8k,UHD,masterpiece,male%20focus,%201boy,gloves,%20ponytail,%20long%20hair,.jpeg&quot;&gt;来源&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;本站基于 &lt;a href=&quot;https://github.com/saicaca/fuwari&quot;&gt;Fuwari&lt;/a&gt; 修改，使用 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建。项目源码和定制内容可在 &lt;a href=&quot;https://github.com/ANcRyel/fuwari-modified&quot;&gt;GitHub 仓库&lt;/a&gt; 查看；有关 Astro 的更多信息，请参阅 &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro 文档&lt;/a&gt;。&lt;/p&gt;
@@ -340,7 +340,7 @@ pnpm check
 pnpm build
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;站点标题、语言、导航、个人资料和主题等设置位于 &lt;code&gt;src/config.ts&lt;/code&gt;。新增文章字段的校验规则位于 &lt;code&gt;src/content.config.ts&lt;/code&gt;。&lt;/p&gt;
-</content:encoded></item><item><title>Markdown 基础语法示例</title><link>https://ancryel.github.io/posts/markdown/</link><guid isPermaLink="true">https://ancryel.github.io/posts/markdown/</guid><description>一个简单的 Markdown 博客文章示例。</description><pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;一级标题&lt;/h1&gt;
+</content:encoded></item><item><title>Markdown 基础语法示例</title><link>https://ancryel.github.io/fuwari-modified-demo/posts/markdown/</link><guid isPermaLink="true">https://ancryel.github.io/fuwari-modified-demo/posts/markdown/</guid><description>一个简单的 Markdown 博客文章示例。</description><pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;一级标题&lt;/h1&gt;
 &lt;p&gt;段落之间空一行即可分段。这里是第二句话，用来展示普通文本的排版效果。&lt;/p&gt;
 &lt;p&gt;文字可以设为 &lt;em&gt;斜体&lt;/em&gt;、&lt;strong&gt;粗体&lt;/strong&gt;或 &lt;code&gt;等宽代码&lt;/code&gt;。无序列表如下：&lt;/p&gt;
 &lt;ul&gt;
@@ -414,7 +414,7 @@ pnpm build
 &lt;p&gt;$$
 e^{i\pi} + 1 = 0
 $$&lt;/p&gt;
-</content:encoded></item><item><title>在文章中嵌入视频</title><link>https://ancryel.github.io/posts/video/</link><guid isPermaLink="true">https://ancryel.github.io/posts/video/</guid><description>本文演示如何在博客文章中嵌入视频。</description><pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;从 YouTube、哔哩哔哩等平台获取嵌入代码，粘贴到 Markdown 文件中即可。发布前请确认视频允许嵌入，并在不同屏幕尺寸下检查显示效果。&lt;/p&gt;
+</content:encoded></item><item><title>在文章中嵌入视频</title><link>https://ancryel.github.io/fuwari-modified-demo/posts/video/</link><guid isPermaLink="true">https://ancryel.github.io/fuwari-modified-demo/posts/video/</guid><description>本文演示如何在博客文章中嵌入视频。</description><pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;从 YouTube、哔哩哔哩等平台获取嵌入代码，粘贴到 Markdown 文件中即可。发布前请确认视频允许嵌入，并在不同屏幕尺寸下检查显示效果。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;---
 title: 在文章中嵌入视频
 published: 2026-09-30
