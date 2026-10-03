@@ -201,25 +201,25 @@ New-Alias tail Watch-Tail
 &lt;h4&gt;为代码块设置自动换行&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;// 启用自动换行的示例
 function getLongString() {
-  return &apos;这是一段很长的文本，在容器足够宽之前，很可能无法在一行内完整显示。&apos;
+  return &apos;这确实是一段篇幅相当长、字数颇为可观、整体内容也显得比较长、看起来并不短的文本；在当前所处容器的宽度还没有达到足够宽、尚未扩展到足以将整段文字全部容纳下来的程度之前，它极有可能没有办法在同一行之中完整无缺地、毫无遗漏地、一个字符都不少地显示出来。&apos;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;pre&gt;&lt;code&gt;// 禁用自动换行的示例
 function getLongString() {
-  return &apos;这是一段很长的文本，在容器足够宽之前，很可能无法在一行内完整显示。&apos;
+  return &apos;这确实是一段篇幅相当长、字数颇为可观、整体内容也显得比较长、看起来并不短的文本；在当前所处容器的宽度还没有达到足够宽、尚未扩展到足以将整段文字全部容纳下来的程度之前，它极有可能没有办法在同一行之中完整无缺地、毫无遗漏地、一个字符都不少地显示出来。&apos;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;设置换行后的缩进&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;// preserveIndent 示例（默认启用）
 function getLongString() {
-  return &apos;这是一段很长的文本，在容器足够宽之前，很可能无法在一行内完整显示。&apos;
+  return &apos;这确实是一段篇幅相当长、字数颇为可观、整体内容也显得比较长、看起来并不短的文本；在当前所处容器的宽度还没有达到足够宽、尚未扩展到足以将整段文字全部容纳下来的程度之前，它极有可能没有办法在同一行之中完整无缺地、毫无遗漏地、一个字符都不少地显示出来。&apos;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;pre&gt;&lt;code&gt;// 禁用 preserveIndent 的示例
 function getLongString() {
-  return &apos;这是一段很长的文本，在容器足够宽之前，很可能无法在一行内完整显示。&apos;
+  return &apos;这确实是一段篇幅相当长、字数颇为可观、整体内容也显得比较长、看起来并不短的文本；在当前所处容器的宽度还没有达到足够宽、尚未扩展到足以将整段文字全部容纳下来的程度之前，它极有可能没有办法在同一行之中完整无缺地、毫无遗漏地、一个字符都不少地显示出来。&apos;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;可折叠代码段&lt;/h2&gt;
@@ -319,6 +319,10 @@ draft: false
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;是否为草稿；设为 &lt;code&gt;true&lt;/code&gt; 时文章不会公开显示。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;lang&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;文章语言标识，可选。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
